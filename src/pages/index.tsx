@@ -1,7 +1,10 @@
-import type { NextPage, NextPageContext } from "next";
-import { User } from "../types";
+import * as React from "react";
 
-export const getStaticProps = async (context: NextPageContext) => {
+import { GlobalNavLayout } from "../components/layouts/GlobalNavLayout";
+import { User } from "../types";
+import type { NextPageWithLayout } from "./_app";
+
+export const getStaticProps = async () => {
   const data: User = await fetch("http://localhost:3000/api/user").then(
     (response) => response.json(),
   );
@@ -17,12 +20,16 @@ type HomeProps = {
   user: User;
 };
 
-const Home: NextPage<HomeProps> = ({ user }) => (
+const Home: NextPageWithLayout<HomeProps> = ({ user }) => (
   <>
     <h1>{user.name}</h1>
     <h3>自己紹介</h3>
     <p>{user.profile}</p>
   </>
+);
+
+Home.getLayout = (page: React.ReactElement) => (
+  <GlobalNavLayout>{page}</GlobalNavLayout>
 );
 
 export default Home;
