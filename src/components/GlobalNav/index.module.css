@@ -1,0 +1,42 @@
+.nav {
+  height: 100vh;
+  width: 50px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  border-right: solid #aaaaaa 1px;
+  transition: 0.3s;
+}
+
+.nav.open {
+  width: 100px;
+}
+
+.link {
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.link.current {
+  background-color: #b4eaf3a1;
+}
+
+.logoutLink {
+  margin-top: auto;
+}
+
+.drawerButton {
+  width: 100%;
+  height: 40px;
+
+  background: none;
+  border: none;
+}

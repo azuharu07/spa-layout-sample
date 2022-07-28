@@ -1,0 +1,23 @@
+.loginForm {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.input {
+  height: 60px;
+  width: 300px;
+
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.loginButton {
+  height: 60px;
+  width: 150px;
+
+  border-radius: 30px;
+}
